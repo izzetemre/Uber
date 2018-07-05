@@ -24,7 +24,7 @@ public class ArabaController {
 
     @RequestMapping(path = "/SaveAraba", method = RequestMethod.POST, consumes = "application/json")
     public @ResponseBody HttpStatus saveAraba(@RequestBody Araba araba){
-
+  //
         try {
             arabaService.saveAraba(araba);
         }
