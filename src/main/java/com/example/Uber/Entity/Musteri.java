@@ -25,6 +25,9 @@ public class Musteri {
     char cinsiyet;
     Long telNo;
 
-    @ManyToMany
-    List<Sofor> sofor;
+    @OneToMany(mappedBy = "musteri")
+    List<Islem> islemler;
+
+//    @ManyToMany(mappedBy = "musteriler")
+//    List<Islem> islemler;
 }

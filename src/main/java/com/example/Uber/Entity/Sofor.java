@@ -28,7 +28,11 @@ public class Sofor {
     @OneToOne
     Araba araba;
 
-    @ManyToMany
-    List<Musteri> musteri;
+    @OneToMany(mappedBy = "sofor")
+    List<Islem> islemler;
+
+
+//    @ManyToMany(mappedBy = "soforler")
+//    List<Islem> islemler;
 
 }

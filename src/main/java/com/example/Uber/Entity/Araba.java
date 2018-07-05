@@ -24,6 +24,6 @@ public class Araba {
     String model;
     char sınıf;
 
-    @OneToOne
-    Sofor sofor;
+//    @OneToOne
+//    Sofor sofor;
 }
