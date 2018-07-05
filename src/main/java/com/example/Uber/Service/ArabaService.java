@@ -41,7 +41,7 @@ public class ArabaService {
         araba.setPlaka(newAraba.getPlaka());
         araba.setMarka(newAraba.getMarka());
         araba.setModel(newAraba.getModel());
-        araba.setSınıf(newAraba.getSınıf());
+        araba.setSinif(newAraba.getSinif());
         saveAraba(araba);
     }
 

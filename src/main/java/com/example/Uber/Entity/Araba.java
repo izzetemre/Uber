@@ -22,7 +22,7 @@ public class Araba {
     String plaka;
     String marka;
     String model;
-    char sınıf;
+    char sinif;
 
 //    @OneToOne
 //    Sofor sofor;
