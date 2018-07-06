@@ -11,7 +11,6 @@ public interface SoforRepository extends CrudRepository<Sofor,Long> {
 
     List<Sofor> findAll();
 
-    Sofor findSoforBySoforId(@Param("soforId") Long soforId);
-
+    //Sofor findSoforBySoforId(@Param("soforId") Long soforId);
 
 }

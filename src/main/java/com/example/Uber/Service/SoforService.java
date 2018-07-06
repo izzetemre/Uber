@@ -18,6 +18,7 @@ public class SoforService {
         return soforRepository.findAll();
     }
 
+
     public void saveSofor(Sofor sofor){
 
         soforRepository.save(sofor);
@@ -25,7 +26,8 @@ public class SoforService {
 
     public Sofor findSoforById(Long soforId){
 
-        return soforRepository.findSoforBySoforId(soforId);
+//        return soforRepository.findSoforBySoforId(soforId);
+        return soforRepository.findOne(soforId);
     }
 
     public void deleteSoforById(Long soforId){
@@ -35,14 +37,20 @@ public class SoforService {
 
     public void updateSoforById(Long soforId, Sofor newSofor){
 
-        Sofor sofor = findSoforById(soforId);
+//        Sofor sofor = findSoforById(soforId);
+//
+//        //sofor.setSoforId(newSofor.getSoforId());
+//        sofor.setAd(newSofor.getAd());
+//        sofor.setSoyad(newSofor.getSoyad());
+//        sofor.setCinsiyet(newSofor.getCinsiyet());
+//        sofor.setTelNo(newSofor.getTelNo());
+//        saveSofor(sofor);
 
-        //sofor.setSoforId(newSofor.getSoforId());
-        sofor.setAd(newSofor.getAd());
-        sofor.setSoyad(newSofor.getSoyad());
-        sofor.setCinsiyet(newSofor.getCinsiyet());
-        sofor.setTelNo(newSofor.getTelNo());
-        saveSofor(sofor);
+        if (soforId.equals(newSofor.getSoforId())){
+
+            saveSofor(newSofor);
+        }
+
     }
 
 }

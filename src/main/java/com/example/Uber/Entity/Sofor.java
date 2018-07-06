@@ -1,5 +1,6 @@
 package com.example.Uber.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,21 +19,22 @@ public class Sofor {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    Long soforId;
+    private Long soforId;
 
-    String ad;
-    String soyad;
-    char cinsiyet;
-    Long telNo;
+    private String ad;
+    private String soyad;
+    private char cinsiyet;
+    private Long telNo;
 
+    //@JsonBackReference
     @OneToOne
+    @JoinColumn(name = "user_id", nullable = false)
     Araba araba;
-
-    @OneToMany(mappedBy = "sofor")
-    List<Islem> islemler;
-
-
-//    @ManyToMany(mappedBy = "soforler")
+//
+//    @OneToMany(mappedBy = "sofor")
 //    List<Islem> islemler;
+
+
+
 
 }

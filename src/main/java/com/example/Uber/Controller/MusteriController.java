@@ -27,10 +27,10 @@ public class MusteriController {
 
         try {
             musteriService.saveMusteri(musteri);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
     }
 
     @RequestMapping(path = "/FindMusteriById/{musteriId}",method = RequestMethod.GET)
@@ -44,24 +44,23 @@ public class MusteriController {
 
         try{
             musteriService.deleteMusteriById(musteriId);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
+
     }
 
     @RequestMapping(path = "/UpdateMusteriById/{musteriId}",method = RequestMethod.PUT)
-    public @ResponseBody HttpStatus findMusteriById(@PathVariable Long musteriId, @RequestBody Musteri newMusteri){
+    public @ResponseBody HttpStatus updateMusteriById(@PathVariable Long musteriId, @RequestBody Musteri newMusteri){
 
         try{
 
                 musteriService.updateMusteriById(musteriId, newMusteri);
                 return HttpStatus.OK;
-
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return null;
     }
 
 

@@ -11,7 +11,8 @@ public interface ArabaRepository extends CrudRepository<Araba,Long> {
 
     List<Araba> findAll();
 
-    Araba findArabaByArabaId(@Param("arabaId") Long arabaId);
+    //Araba findArabaByArabaId(@Param("arabaId") Long arabaId);
+
 
 
 }

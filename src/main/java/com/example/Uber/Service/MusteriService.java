@@ -25,7 +25,8 @@ public class MusteriService {
 
     public Musteri findMusteriById(Long musteriId){
 
-        return musteriRepository.findMusteriByMusteriId(musteriId);
+        //return musteriRepository.findMusteriByMusteriId(musteriId);
+        return musteriRepository.findOne(musteriId);
     }
 
     public void deleteMusteriById(Long musteriId){
@@ -35,14 +36,12 @@ public class MusteriService {
 
     public void updateMusteriById(Long musteriId, Musteri newMusteri){
 
-        Musteri musteri = findMusteriById(musteriId);
 
-        //musteri.setMusteriId(newMusteri.getMusteriId());
-        musteri.setAd(newMusteri.getAd());
-        musteri.setSoyad(newMusteri.getSoyad());
-        musteri.setCinsiyet(newMusteri.getCinsiyet());
-        musteri.setTelNo(newMusteri.getTelNo());
-        saveMusteri(musteri);
+
+        if (musteriId.equals(newMusteri.getMusteriId())){
+
+            saveMusteri(newMusteri);
+        }
     }
 
 }

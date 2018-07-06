@@ -25,7 +25,8 @@ public class ArabaService {
 
     public Araba findArabaById(Long arabaId){
 
-        return arabaRepository.findArabaByArabaId(arabaId);
+        //return arabaRepository.findArabaByArabaId(arabaId);
+        return arabaRepository.findOne(arabaId);
     }
 
     public void deleteArabaById(Long arabaId){
@@ -35,14 +36,11 @@ public class ArabaService {
 
     public void updateArabaById(Long arabaId, Araba newAraba){
 
-        Araba araba = findArabaById(arabaId);
 
-        //araba.setArabaId(newAraba.getArabaId());
-        araba.setPlaka(newAraba.getPlaka());
-        araba.setMarka(newAraba.getMarka());
-        araba.setModel(newAraba.getModel());
-        araba.setSinif(newAraba.getSinif());
-        saveAraba(araba);
+        if (arabaId.equals(newAraba.getArabaId())){
+
+            saveAraba(newAraba);
+        }
     }
 
 }

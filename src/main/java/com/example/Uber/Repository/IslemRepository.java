@@ -11,7 +11,7 @@ public interface IslemRepository extends CrudRepository<Islem,Long> {
 
     List<Islem> findAll();
 
-    Islem findIslemByIslemId(@Param("islemId") Long islemId);
+    //Islem findIslemByIslemId(@Param("islemId") Long islemId);
 
 
 }

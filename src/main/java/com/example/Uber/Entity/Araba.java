@@ -17,13 +17,13 @@ public class Araba {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    Long arabaId;
+    private Long arabaId;
 
-    String plaka;
-    String marka;
-    String model;
-    char sinif;
+    private String plaka;
+    private String marka;
+    private String model;
+    private String sinif;
 
-//    @OneToOne
-//    Sofor sofor;
+    @OneToOne(mappedBy = "araba")
+    Sofor sofor;
 }

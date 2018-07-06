@@ -27,10 +27,11 @@ public class SoforController {
 
         try {
             soforService.saveSofor(sofor);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
+
     }
 
     @RequestMapping(path = "/FindSoforById/{soforId}",method = RequestMethod.GET)
@@ -44,24 +45,23 @@ public class SoforController {
 
         try{
             soforService.deleteSoforById(soforId);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
+
     }
 
     @RequestMapping(path = "/UpdateSoforById/{soforId}",method = RequestMethod.PUT)
-    public @ResponseBody HttpStatus findSoforById(@PathVariable Long soforId, @RequestBody Sofor newSofor){
+    public @ResponseBody HttpStatus updateSoforById(@PathVariable Long soforId, @RequestBody Sofor newSofor){
 
         try{
 
                 soforService.updateSoforById(soforId, newSofor);
                 return HttpStatus.OK;
-
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return null;
     }
 
 

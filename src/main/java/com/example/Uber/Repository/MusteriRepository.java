@@ -11,7 +11,7 @@ public interface MusteriRepository extends CrudRepository<Musteri,Long> {
 
     List<Musteri> findAll();
 
-    Musteri findMusteriByMusteriId(@Param("musteriId") Long musteriId);
+    //Musteri findMusteriByMusteriId(@Param("musteriId") Long musteriId);
 
 
 }

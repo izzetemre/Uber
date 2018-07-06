@@ -27,10 +27,10 @@ public class ArabaController {
 
         try {
             arabaService.saveAraba(araba);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
     }
 
     @RequestMapping(path = "/FindArabaById/{arabaId}",method = RequestMethod.GET)
@@ -44,14 +44,14 @@ public class ArabaController {
 
         try{
             arabaService.deleteArabaById(arabaId);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
     }
 
     @RequestMapping(path = "/UpdateArabaById/{arabaId}",method = RequestMethod.PUT)
-    public @ResponseBody HttpStatus findArabaById(@PathVariable Long arabaId, @RequestBody Araba newAraba){
+    public @ResponseBody HttpStatus updateArabaById(@PathVariable Long arabaId, @RequestBody Araba newAraba){
 
         try{
 
@@ -59,9 +59,8 @@ public class ArabaController {
                 return HttpStatus.OK;
 
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return null;
     }
 
 

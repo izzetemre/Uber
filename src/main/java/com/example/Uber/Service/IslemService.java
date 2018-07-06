@@ -25,7 +25,8 @@ public class IslemService {
 
     public Islem findIslemById(Long islemId){
 
-        return islemRepository.findIslemByIslemId(islemId);
+        //return islemRepository.findIslemByIslemId(islemId);
+        return islemRepository.findOne(islemId);
     }
 
     public void deleteIslemById(Long islemId){
@@ -35,14 +36,10 @@ public class IslemService {
 
     public void updateIslemById(Long islemId, Islem newIslem){
 
-        Islem islem = findIslemById(islemId);
+        if (islemId.equals(newIslem.getIslemId())){
 
-        //islem.setIslemId(newIslem.getIslemId());
-        islem.setIslemZamani(newIslem.getIslemZamani());
-        islem.setFiyat(newIslem.getFiyat());
-        //islem.setMusteriId(newIslem.getMusteriId());
-        //islem.setSoforId(newIslem.getSoforId());
-        saveIslem(islem);
+            saveIslem(newIslem);
+        }
     }
 
 }

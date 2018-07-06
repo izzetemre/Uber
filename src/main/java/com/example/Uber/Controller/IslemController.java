@@ -27,10 +27,10 @@ public class IslemController {
 
         try {
             islemService.saveIslem(islem);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
     }
 
     @RequestMapping(path = "/FindIslemById/{islemId}",method = RequestMethod.GET)
@@ -44,14 +44,14 @@ public class IslemController {
 
         try{
             islemService.deleteIslemById(islemId);
+            return HttpStatus.OK;
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return HttpStatus.OK;
     }
 
     @RequestMapping(path = "/UpdateIslemById/{islemId}",method = RequestMethod.PUT)
-    public @ResponseBody HttpStatus findIslemById(@PathVariable Long islemId, @RequestBody Islem newIslem){
+    public @ResponseBody HttpStatus updateIslemById(@PathVariable Long islemId, @RequestBody Islem newIslem){
 
         try{
 
@@ -59,9 +59,8 @@ public class IslemController {
                 return HttpStatus.OK;
 
         }
-        catch (Exception e){}
+        catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 
-        return null;
     }
 
 

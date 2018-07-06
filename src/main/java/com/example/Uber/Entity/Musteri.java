@@ -1,5 +1,6 @@
 package com.example.Uber.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,16 +19,20 @@ public class Musteri {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    Long musteriId;
+    private Long musteriId;
 
-    String ad;
-    String soyad;
-    char cinsiyet;
-    Long telNo;
+    private String ad;
+    private String soyad;
+    private char cinsiyet;
+    private Long telNo;
 
-    @OneToMany(mappedBy = "musteri")
-    List<Islem> islemler;
 
-//    @ManyToMany(mappedBy = "musteriler")
+//    @OneToMany(mappedBy = "musteri")
+//    List<Kart> kartlar;
+//
+//
+//    @OneToMany(mappedBy = "musteri")
 //    List<Islem> islemler;
+
+
 }
