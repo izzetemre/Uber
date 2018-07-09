@@ -26,13 +26,13 @@ public class Sofor {
     private char cinsiyet;
     private Long telNo;
 
-    //@JsonBackReference
     @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    Araba araba;
-//
-//    @OneToMany(mappedBy = "sofor")
-//    List<Islem> islemler;
+    @JoinColumn(name = "araba")
+    private Araba araba;
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "sofor")
+    private List<Islem> islemler;
 
 
 

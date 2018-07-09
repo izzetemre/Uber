@@ -1,5 +1,6 @@
 package com.example.Uber.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class Araba {
     private String model;
     private String sinif;
 
+    @JsonBackReference
     @OneToOne(mappedBy = "araba")
-    Sofor sofor;
+    private Sofor sofor;
 }

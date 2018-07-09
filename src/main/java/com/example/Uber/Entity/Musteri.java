@@ -26,13 +26,11 @@ public class Musteri {
     private char cinsiyet;
     private Long telNo;
 
+    @JsonBackReference
+    @OneToMany(mappedBy = "musteri")
+    private List<Kart> kartlar;
 
-//    @OneToMany(mappedBy = "musteri")
-//    List<Kart> kartlar;
-//
-//
-//    @OneToMany(mappedBy = "musteri")
-//    List<Islem> islemler;
+
 
 
 }

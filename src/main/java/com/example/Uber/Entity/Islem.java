@@ -27,13 +27,15 @@ public class Islem {
     private Time islemZamani;
     private Long fiyat;
 
-//    @JsonBackReference
-//    @ManyToOne
-//    Musteri musteri;
-//
-//    @JsonBackReference
-//    @ManyToOne
-//    Sofor sofor;
+
+    @ManyToOne
+    @JoinColumn(name = "kart")
+    Kart kart;
+
+
+    @ManyToOne
+    @JoinColumn(name = "sofor")
+    Sofor sofor;
 
 
 
