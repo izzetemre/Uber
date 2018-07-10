@@ -36,15 +36,7 @@ public class SoforService {
     }
 
     public void updateSoforById(Long soforId, Sofor newSofor){
-
-//        Sofor sofor = findSoforById(soforId);
-//
-//        //sofor.setSoforId(newSofor.getSoforId());
-//        sofor.setAd(newSofor.getAd());
-//        sofor.setSoyad(newSofor.getSoyad());
-//        sofor.setCinsiyet(newSofor.getCinsiyet());
-//        sofor.setTelNo(newSofor.getTelNo());
-//        saveSofor(sofor);
+        ;
 
         if (soforId.equals(newSofor.getSoforId())){
 

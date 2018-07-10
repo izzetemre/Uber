@@ -55,8 +55,8 @@ public class ArabaController {
 
         try{
 
-                arabaService.updateArabaById(arabaId, newAraba);
-                return HttpStatus.OK;
+            arabaService.updateArabaById(arabaId, newAraba);
+            return HttpStatus.OK;
 
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }

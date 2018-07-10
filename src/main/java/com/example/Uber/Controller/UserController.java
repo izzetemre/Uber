@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping(value = "user")
 public class UserController {
@@ -23,7 +22,6 @@ public class UserController {
 
     @RequestMapping(value = "findUserData", method = RequestMethod.GET)
     public void findUserData(@PathVariable String name) {
-
         userService.findUser(name);
     }
 }

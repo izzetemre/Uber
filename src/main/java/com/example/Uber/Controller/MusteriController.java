@@ -56,8 +56,8 @@ public class MusteriController {
 
         try{
 
-                musteriService.updateMusteriById(musteriId, newMusteri);
-                return HttpStatus.OK;
+            musteriService.updateMusteriById(musteriId, newMusteri);
+            return HttpStatus.OK;
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 

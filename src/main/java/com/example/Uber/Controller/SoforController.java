@@ -57,8 +57,8 @@ public class SoforController {
 
         try{
 
-                soforService.updateSoforById(soforId, newSofor);
-                return HttpStatus.OK;
+            soforService.updateSoforById(soforId, newSofor);
+            return HttpStatus.OK;
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }
 

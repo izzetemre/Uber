@@ -56,8 +56,8 @@ public class IslemController {
 
         try{
 
-                islemService.updateIslemById(islemId, newIslem);
-                return HttpStatus.OK;
+            islemService.updateIslemById(islemId, newIslem);
+            return HttpStatus.OK;
 
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }

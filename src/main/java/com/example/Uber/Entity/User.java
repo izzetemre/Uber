@@ -3,7 +3,6 @@ package com.example.Uber.Entity;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import java.beans.Transient;
 import java.io.Serializable;
@@ -24,6 +23,7 @@ public class User implements Serializable, UserDetails {
     private String name;
 
     private String password;
+
 
     @Transient
     @Override
