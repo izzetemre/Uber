@@ -9,7 +9,7 @@
     <script src=" angular/angular-resource.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="Sofor.js"></script>
+    <script src="Musteri.js"></script>
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -23,22 +23,22 @@
             padding: 25px;
         }
 
-        #soforler {
+        #musteriler {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
         }
 
-        #soforler td, #soforler th {
+        #musteriler td, #musteriler th {
             border: 1px solid #ddd;
             padding: 8px;
         }
 
-        #soforler tr:nth-child(even){background-color: #f2f2f2;}
+        #musteriler tr:nth-child(even){background-color: #f2f2f2;}
 
-        #soforler tr:hover {background-color: #ddd;}
+        #musteriler tr:hover {background-color: #ddd;}
 
-        #soforler th {
+        #musteriler th {
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
@@ -62,8 +62,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="Anasayfa.html">Anasayfa</a></li>
-                <li class="active"><a href="Sofor.html">Şöför</a></li>
-                <li><a href="Musteri.html">Müşteri</a></li>
+                <li><a href="Sofor.html">Şöför</a></li>
+                <li class="active"><a href="Musteri.html">Müşteri</a></li>
                 <li><a href="Islem.html">İşlem</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -81,9 +81,9 @@
 </div>
 
 
-<div ng-init="pageOpen()" ng-app="Uber" ng-controller="SoforController">
-
-        <table id="soforler">
+<div ng-init="pageOpen()" ng-app="Uber" ng-controller="MusteriController">
+    <form>
+        <table id="musteriler">
             <thead>
             <tr>
                 <th>Şöför Id</th>
@@ -94,17 +94,16 @@
             </tr>
             </thead>
             <tbody>
-            <tr  ng-repeat="sofor in soforler">
-                <td> {{sofor.ad}} </td>
-                <td> {{sofor.soyad}} </td>
-                <td> {{sofor.cinsiyet}} </td>
-                <td> {{sofor.telNo}} </td>
-                <td> <button type="button" class="btn btn-primary" ng-click="">Güncelle</button> </td>
-                <td> <button type="button" class="btn btn-warning" ng-click="">Sil</button> </td>
+            <tr  ng-repeat="musteri in musteriler">
+                <td> {{musteri.musteriId}} </td>
+                <td> {{musteri.ad}} </td>
+                <td> {{musteri.soyad}} </td>
+                <td> {{musteri.cinsiyet}} </td>
+                <td> {{musteri.telNo}} </td>
             </tr>
             </tbody>
         </table>
-
+    </form>
 </div>
 
 
