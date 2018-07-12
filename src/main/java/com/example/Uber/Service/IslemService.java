@@ -29,9 +29,9 @@ public class IslemService {
         return islemRepository.findOne(islemId);
     }
 
-    public void deleteIslemById(Long islemId){
+    public void deleteIslem(Islem islem){
 
-        islemRepository.delete(islemId);
+        islemRepository.delete(islem);
     }
 
     public void updateIslemById(Long islemId, Islem newIslem){

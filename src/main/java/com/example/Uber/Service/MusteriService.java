@@ -29,9 +29,9 @@ public class MusteriService {
         return musteriRepository.findOne(musteriId);
     }
 
-    public void deleteMusteriById(Long musteriId){
+    public void deleteMusteri(Musteri musteri){
 
-        musteriRepository.delete(musteriId);
+        musteriRepository.delete(musteri);
     }
 
     public void updateMusteriById(Long musteriId, Musteri newMusteri){

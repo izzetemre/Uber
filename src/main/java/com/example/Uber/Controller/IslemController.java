@@ -40,11 +40,11 @@ public class IslemController {
         return islemService.findIslemById(islemId);
     }
 
-    @RequestMapping(path = "/DeleteIslemById/{islemId}", method = RequestMethod.DELETE)
-    public @ResponseBody HttpStatus deleteIslem(@PathVariable Long islemId) {
+    @RequestMapping(path = "/DeleteIslem", method = RequestMethod.DELETE)
+    public @ResponseBody HttpStatus deleteIslem(@RequestBody Islem islem) {
 
         try{
-            islemService.deleteIslemById(islemId);
+            islemService.deleteIslem(islem);
             return HttpStatus.OK;
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }

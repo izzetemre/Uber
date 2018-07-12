@@ -39,11 +39,11 @@ public class MusteriController {
         return musteriService.findMusteriById(musteriId);
     }
 
-    @RequestMapping(path = "/DeleteMusteriById/{musteriId}", method = RequestMethod.DELETE)
-    public @ResponseBody HttpStatus deleteMusteri(@PathVariable Long musteriId) {
+    @RequestMapping(path = "/DeleteMusteriById", method = RequestMethod.DELETE, consumes = "application/json")
+    public @ResponseBody HttpStatus deleteMusteri(@RequestBody Musteri musteri) {
 
         try{
-            musteriService.deleteMusteriById(musteriId);
+            musteriService.deleteMusteri(musteri);
             return HttpStatus.OK;
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }

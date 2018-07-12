@@ -40,11 +40,11 @@ public class KartController {
         return kartService.findKartById(kartId);
     }
 
-    @RequestMapping(path = "/DeleteKartById/{kartId}", method = RequestMethod.DELETE)
-    public @ResponseBody HttpStatus deleteKart(@PathVariable Long kartId) {
+    @RequestMapping(path = "/DeleteKartById", method = RequestMethod.DELETE)
+    public @ResponseBody HttpStatus deleteKart(@RequestBody Kart kart) {
 
         try{
-            kartService.deleteKartById(kartId);
+            kartService.deleteKart(kart);
             return HttpStatus.OK;
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }

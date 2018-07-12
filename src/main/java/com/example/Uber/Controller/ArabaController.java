@@ -39,11 +39,11 @@ public class ArabaController {
         return arabaService.findArabaById(arabaId);
     }
 
-    @RequestMapping(path = "/DeleteArabaById/{arabaId}", method = RequestMethod.DELETE)
-    public @ResponseBody HttpStatus deleteAraba(@PathVariable Long arabaId) {
+    @RequestMapping(path = "/DeleteArabaById", method = RequestMethod.DELETE)
+    public @ResponseBody HttpStatus deleteAraba(@RequestBody Araba araba) {
 
         try{
-            arabaService.deleteArabaById(arabaId);
+            arabaService.deleteAraba(araba);
             return HttpStatus.OK;
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }

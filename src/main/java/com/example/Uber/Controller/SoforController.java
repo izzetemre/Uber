@@ -40,11 +40,11 @@ public class SoforController {
         return soforService.findSoforById(soforId);
     }
 
-    @RequestMapping(path = "/DeleteSoforById/{soforId}", method = RequestMethod.DELETE)
-    public @ResponseBody HttpStatus deleteSofor(@PathVariable Long soforId) {
+    @RequestMapping(path = "/DeleteSofor", method = RequestMethod.POST, consumes = "application/json")
+    public @ResponseBody HttpStatus deleteSofor(@RequestBody Sofor sofor) {
 
         try{
-            soforService.deleteSoforById(soforId);
+            soforService.deleteSofor(sofor);
             return HttpStatus.OK;
         }
         catch (Exception e){    return HttpStatus.BAD_REQUEST;   }

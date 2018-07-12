@@ -29,9 +29,9 @@ public class ArabaService {
         return arabaRepository.findOne(arabaId);
     }
 
-    public void deleteArabaById(Long arabaId){
+    public void deleteAraba(Araba araba){
 
-        arabaRepository.delete(arabaId);
+        arabaRepository.delete(araba);
     }
 
     public void updateArabaById(Long arabaId, Araba newAraba){

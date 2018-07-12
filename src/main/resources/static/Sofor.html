@@ -34,9 +34,13 @@
             padding: 8px;
         }
 
-        #soforler tr:nth-child(even){background-color: #f2f2f2;}
+        #soforler tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-        #soforler tr:hover {background-color: #ddd;}
+        #soforler tr:hover {
+            background-color: #ddd;
+        }
 
         #soforler th {
             padding-top: 12px;
@@ -57,7 +61,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">UBER</a>
+            <a class="navbar-brand" href="Anasayfa.html">UBER</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -83,29 +87,90 @@
 
 <div ng-init="pageOpen()" ng-app="Uber" ng-controller="SoforController">
 
-        <table id="soforler">
-            <thead>
-            <tr>
-                <th>Şöför Id</th>
-                <th>İsim</th>
-                <th>Soyad</th>
-                <th>Cinsiyet</th>
-                <th>Telefon Numarası</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr  ng-repeat="sofor in soforler">
-                <td> {{sofor.ad}} </td>
-                <td> {{sofor.soyad}} </td>
-                <td> {{sofor.cinsiyet}} </td>
-                <td> {{sofor.telNo}} </td>
-                <td> <button type="button" class="btn btn-primary" ng-click="">Güncelle</button> </td>
-                <td> <button type="button" class="btn btn-warning" ng-click="">Sil</button> </td>
-            </tr>
-            </tbody>
-        </table>
 
-</div>
+    <h2>Kayıtlı Şöförler</h2>
+
+    <table id="soforler">
+        <thead>
+        <tr>
+            <th>İsim</th>
+            <th>Soyad</th>
+            <th>Cinsiyet</th>
+            <th>Telefon Numarası</th>
+            <th>Araba</th>
+            <th>İşlemler</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="sofor in soforler">
+            <td> {{sofor.ad}}</td>
+            <td> {{sofor.soyad}}</td>
+            <td> {{sofor.cinsiyet}}</td>
+            <td> {{sofor.telNo}}</td>
+            <td> {{sofor.araba.marka}} {{sofor.araba.model}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" ng-click="soforSec(sofor)">Güncelle</button>
+                <button type="button" class="btn btn-danger" ng-click="soforSil(sofor)">Kaydı Sil</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h1> </h1>
+    <h1> </h1>
+
+    <div class="panel-group">
+        <div class="panel panel-primary ">
+            <div class="panel-heading">Bilgileri Güncelle</div>
+
+            <!--ŞÖFÖR BİLGİLERİ GÜNCELLE-->
+            <div class="form-group">
+                <label for="soforAd">Ad</label>
+                <input type="text" class="form-control" id="soforAd" ng-model="sofor.ad" placeholder="Şöförün Adı">
+            </div>
+            <div class="form-group">
+                <label for="soforSoyad">Soyad</label>
+                <input type="text" class="form-control" id="soforSoyad" ng-model="sofor.soyad" placeholder="Şöförün Soyadı">
+            </div>
+            <div class="form-group">
+                <label for="soforCinsiyet">Cinsiyet</label>
+                <input type="text" class="form-control" id="soforCinsiyet" ng-model="sofor.cinsiyet" placeholder="Şöförün Cinsiyeti">
+            </div>
+            <div class="form-group">
+                <label for="soforTelNo">Tel No</label>
+                <input type="text" class="form-control" id="soforTelNo" ng-model="sofor.telNo" placeholder="Şöförün Telefon numarası">
+            </div>
+
+            <!--ARABA BİLGİLERİ GİRİŞİ-->
+            <!--<div class="form-group">-->
+                <!--<label for="arabaPlaka">Plaka</label>-->
+                <!--<input type="text" class="form-control" id="arabaPlaka" ng-model="sofor.araba.plaka" placeholder="Arabanın Plakası">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="arabaMarka">Marka</label>-->
+                <!--<input type="text" class="form-control" id="arabaMarka" ng-model="sofor.araba.marka" placeholder="Arabanın Markası">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="arabaModel">Model</label>-->
+                <!--<input type="text" class="form-control" id="arabaModel" ng-model="sofor.araba.model" placeholder="Arabanın Modeli">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="arabaSinif">Sınıf</label>-->
+                <!--<input type="text" class="form-control" id="arabaSinif" ng-model="sofor.araba.sinif" placeholder="Arabanın Sınıfı">-->
+            <!--</div>-->
+
+
+            <button type="button" class="btn btn-success" ng-click="soforKaydet()">Kaydet</button>
+
+        </div>
+
+        </div>
+
+
+
+
+
+
 
 
 <footer class="container-fluid text-center">

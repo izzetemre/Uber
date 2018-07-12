@@ -30,9 +30,9 @@ public class SoforService {
         return soforRepository.findOne(soforId);
     }
 
-    public void deleteSoforById(Long soforId){
+    public void deleteSofor(Sofor sofor){
 
-        soforRepository.delete(soforId);
+        soforRepository.delete(sofor);
     }
 
     public void updateSoforById(Long soforId, Sofor newSofor){

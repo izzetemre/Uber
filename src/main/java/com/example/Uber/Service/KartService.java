@@ -29,9 +29,9 @@ public class KartService {
         return kartRepository.findOne(kartId);
     }
 
-    public void deleteKartById(Long kartId){
+    public void deleteKart(Kart kart){
 
-        kartRepository.delete(kartId);
+        kartRepository.delete(kart);
     }
 
     public void updateKartById(Long kartId, Kart newKart){
