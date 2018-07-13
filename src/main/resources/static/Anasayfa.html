@@ -9,7 +9,7 @@
     <script src=" angular/angular-resource.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="Sofor.js"></script>
+    <script src="Anasayfa.js"></script>
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -57,26 +57,45 @@
     </div>
 </div>
 
+<div ng-init="pageOpen()" ng-app="Uber" ng-controller="AnasayfaController">
 
     <div class="panel panel-primary">
         <div class="panel-heading">Araç Bulma</div>
         <div class="panel-body">
 
-
+            <!--ŞÖFÖR SEÇİM-->
             <div class="form-group">
                 <label for="soforSelect">Şöfor seçin:</label>
-                <select class="form-control" id="soforSelect">
-                    <tr  ng-repeat="sofor in soforler">
-                        <td> {{sofor.ad}} </td>
-                    </tr>
-                </select>
-
+                <select class="form-control" id="soforSelect" ng-change="deneme()" ng-options="sofor as sofor.ad for sofor in soforler"
+                        ng-model="islem.sofor"></select>
             </div>
+
+            <h2></h2>
+            <h4>Araç: <span class="label label-default" id="arac">{{islem.sofor.araba.marka}}{{islem.sofor.araba.model}}</span></h4>
+
+            <h1></h1>
+            <!--KART SEÇİM-->
+            <div class="form-group">
+                <label for="kartSelect">Ödeme yöntemi seçin:</label>
+                <select class="form-control" id="kartSelect" ng-options="kart as kart.bankaAdi for kart in kartlar"
+                        ng-model="islem.kart"></select>
+
+                <h2></h2>
+                <h4>Bakiye: <span class="label label-default" id="bakiye">{{islem.kart.bakiye}}</span></h4>
+            </div>
+
+            <h1></h1>
+            <p id="tarih"></p> <p id="saat" ng-model="islem.tarih"></p>
+            <h1></h1>
+
+
+            <button type="button" class="btn btn-primary" ng-click="islemKaydet()">İşlemi Tamamla</button>
+
 
         </div>
     </div>
 
-
+</div>
 <footer class="container-fluid text-center">
     <p>UBER App - İzzet Emre Arı</p>
 </footer>
